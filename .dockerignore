@@ -1,0 +1,4 @@
+Dockerfile
+.env*
+.gitlab-ci.yml
+.gitignore
