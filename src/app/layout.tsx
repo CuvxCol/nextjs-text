@@ -1,16 +1,18 @@
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import ThemeProvider from '@/theme';
+
 
 const inter = Inter({ subsets: ['latin'] });
 
+
 export const metadata: Metadata = {
-  title: 'PQRS - COMFIAR',
+  title: 'Business Manager - Netzi',
   description:
     '',
-  keywords: 'pqrs, pqr, comfiar, caja de compensacion familiar de arauca, arauca, caja de compensacion',
-  themeColor: '#000000',
+  keywords: 'negocios, admninistrador, netzi',
   manifest: '/manifest.json',
-  viewport: { width: 'device-width', initialScale: 1, maximumScale: 1 },
   icons: [
     { rel: 'icon', url: '/favicon/favicon.ico' },
     { rel: 'icon', type: 'image/png', sizes: '16x16', url: '/favicon/favicon-16x16.png' },
@@ -26,7 +28,13 @@ function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AntdRegistry>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </AntdRegistry>
+      </body>
     </html>
   );
 }

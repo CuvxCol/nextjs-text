@@ -1,5 +1,9 @@
+import HomeView from '@/sections/home/view';
+
 function HomePage() {
-  return <h1>Hello, Next.js!</h1>;
+  return (
+    <HomeView />
+  );
 }
 
 export default HomePage;
